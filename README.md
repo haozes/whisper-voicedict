@@ -343,6 +343,10 @@ python infer_gui.py --model_path=models/whisper-tiny-finetune-ct2
 <img src="./docs/images/gui.jpg" alt="GUI界面" width="600"/>
 </div>
 
+##  转换为 iOS / android 使用的模型
+git clone https://github.com/openai/whisper
+./convert-ggml.py --whisper_dir ../whisper 
+
 <a name='Web部署'></a>
 
 ## Web部署
