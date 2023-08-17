@@ -25,17 +25,18 @@ def main():
         for subfolder, _, filelist in sorted(os.walk(audio_dir)):
             for fname in filelist:
                 fileName, extension = os.path.splitext(fname)
-                print(fileName + "" + extension)
-                audio_path = os.path.join(subfolder, fileName + ".wav")
-                text_path = os.path.join(subfolder, fileName + ".txt")
-                if os.path.exists(text_path) and os.path.exists(audio_path):
-                    with open(text_path, 'r', encoding='utf-8') as f:
-                        text = f.read()
-                    sample, sr = soundfile.read(audio_path)
-                    duration = round(sample.shape[-1] / float(sr), 2)
-                    line = {"audio": {"path": audio_path}, "sentence": text,"duration":duration}
-                    print(line)
-                    lines.append(line)
+                if extension is '.wav':
+                    print(fileName + "" + extension)
+                    audio_path = os.path.join(subfolder, fileName + ".wav")
+                    text_path = os.path.join(subfolder, fileName + ".txt")
+                    if os.path.exists(text_path) and os.path.exists(audio_path):
+                        with open(text_path, 'r', encoding='utf-8') as f:
+                            text = f.read()
+                        sample, sr = soundfile.read(audio_path)
+                        duration = round(sample.shape[-1] / float(sr), 2)
+                        line = {"audio": {"path": audio_path}, "sentence": text,"duration":duration}
+                        print(line)
+                        lines.append(line)
         for line in lines:
             f_json.write(json.dumps(line,  ensure_ascii=False)+"\n")
 
