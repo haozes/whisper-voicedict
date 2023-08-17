@@ -1,0 +1,1 @@
+python convert-ggml.py --whisper_dir ../whisper
