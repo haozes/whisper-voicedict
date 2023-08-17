@@ -25,7 +25,7 @@ def main():
         for subfolder, _, filelist in sorted(os.walk(audio_dir)):
             for fname in filelist:
                 fileName, extension = os.path.splitext(fname)
-                if extension is '.wav':
+                if extension == '.wav':
                     print(fileName + "" + extension)
                     audio_path = os.path.join(subfolder, fileName + ".wav")
                     text_path = os.path.join(subfolder, fileName + ".txt")
