@@ -65,4 +65,4 @@ def convert_hf_whisper(hf_model_name_or_path: str, whisper_state_path: str):
     torch.save({"dims": dims, "model_state_dict": state_dict}, whisper_state_path)
 
 
-convert_hf_whisper("./models/whisper-tiny-finetune", "./models/ggml_model.pt")
+convert_hf_whisper("./models/whisper-tiny-finetune", "./models/alphabet.pt")
