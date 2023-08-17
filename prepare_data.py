@@ -16,7 +16,7 @@ def main():
     
 
     # 训练集
-    data_types = ['train', 'dev','test']
+    data_types = ['train','test']
     
     for type in data_types:
         lines = []
