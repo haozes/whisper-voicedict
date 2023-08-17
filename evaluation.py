@@ -20,7 +20,7 @@ add_arg("test_data",   type=str, default="dataset/test.json",            help="�
 add_arg("model_path",  type=str, default="models/whisper-tiny-finetune", help="合并模型的路径，或者是huggingface上模型的名称")
 add_arg("batch_size",  type=int, default=16,        help="评估的batch size")
 add_arg("num_workers", type=int, default=8,         help="读取数据的线程数量")
-add_arg("language",    type=str, default="Chinese", help="设置语言，可全称也可简写，如果为None则评估的是多语言")
+add_arg("language",    type=str, default="English", help="设置语言，可全称也可简写，如果为None则评估的是多语言")
 add_arg("remove_pun",  type=bool, default=True,     help="是否移除标点符号")
 add_arg("to_simple",   type=bool, default=True,     help="是否转为简体中文")
 add_arg("timestamps",  type=bool, default=False,    help="评估时是否使用时间戳数据")
